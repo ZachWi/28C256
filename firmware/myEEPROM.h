@@ -77,7 +77,7 @@ byte EEPROM_28C256::read(long address){
 
   digitalWrite(CE, HIGH);
   digitalWrite(OE, HIGH);
-  delayMicroseconds(1);
+  delayMicroseconds(2);
 
   return value;
 }
@@ -87,16 +87,16 @@ void EEPROM_28C256::write(long address, byte data){
   if(io_output == false) set_io_output(true);
   
   digitalWrite(OE, HIGH);
-  delayMicroseconds(1);
+  delayMicroseconds(2);
   
   set_address(address);
-  delayMicroseconds(1);
+  delayMicroseconds(2);
   
   digitalWrite(CE, LOW);
-  delayMicroseconds(1);
+  delayMicroseconds(2);
   
   digitalWrite(WE, LOW);
-  delayMicroseconds(1);
+  delayMicroseconds(2);
 
   byte current = data;
   for(int i=0; i<8; i++){
@@ -108,12 +108,12 @@ void EEPROM_28C256::write(long address, byte data){
   delayMicroseconds(5);
 
   digitalWrite(WE, HIGH);
-  delayMicroseconds(1);
+  delayMicroseconds(2);
   
   digitalWrite(CE, HIGH);
-  delayMicroseconds(1);
+  delayMicroseconds(2);
   
   digitalWrite(OE, LOW);
-  delayMicroseconds(1);
+  delay(10);
   
 }
