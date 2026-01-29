@@ -22,7 +22,7 @@ def Error(message, remove=True):
     exit()
 
 class EEPROM_programmer():
-    def __init__(self, port='/dev/ttyUSB0', baudrate=115200, timeout=4):
+    def __init__(self, port='/dev/ttyUSB0', baudrate=115200, timeout=15):
         self.port = port
         self.baudrate = baudrate
         self.timeout = timeout
